@@ -1,0 +1,10 @@
+{
+  "name": "clutchrit-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "cd client && npm install && npm run build",
+    "server-install": "cd server && npm install",
+    "install-all": "npm install && npm run server-install && cd client && npm install"
+  }
+}
