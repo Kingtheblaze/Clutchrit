@@ -48,7 +48,7 @@ const Footer = () => {
         <div className="flex flex-col space-y-8">
           <h4 className="font-subheading text-xl uppercase tracking-[0.2em] text-text-0 border-l-4 border-fire pl-4">COMM_CHANNELS</h4>
           <div className="flex gap-4">
-            <a href="https://instagram.com/clutchrit" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-surface-1 border border-border flex items-center justify-center text-text-1 hover:bg-fire hover:text-void hover:border-fire transition-all duration-300">
+            <a href="https://instagram.com/clutchritesports" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-surface-1 border border-border flex items-center justify-center text-text-1 hover:bg-fire hover:text-void hover:border-fire transition-all duration-300">
               <FaInstagram size={20} />
             </a>
             <a href="#" className="w-12 h-12 bg-surface-1 border border-border flex items-center justify-center text-text-1 hover:bg-acid hover:text-void hover:border-acid transition-all duration-300">
