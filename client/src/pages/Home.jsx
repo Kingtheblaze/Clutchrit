@@ -87,9 +87,9 @@ const Home = () => {
           </motion.p>
 
           <motion.div variants={fadeUp} className="flex flex-wrap gap-4">
-            <Link to="/members" className="bg-acid text-void font-subheading font-bold uppercase tracking-widest px-[36px] py-[14px] hover:scale-105 hover:shadow-acid-glow transition-all duration-300">
+            <a href="https://www.instagram.com/clutchrit.esports?igsh=MXgzdWNoc3g2MXU5Yw==" target="_blank" rel="noopener noreferrer" className="bg-acid text-void font-subheading font-bold uppercase tracking-widest px-[36px] py-[14px] hover:scale-105 hover:shadow-acid-glow transition-all duration-300">
               JOIN THE CLUB
-            </Link>
+            </a>
             <Link to="/events" className="border border-acid text-acid font-subheading font-bold uppercase tracking-widest px-[36px] py-[14px] hover:bg-acid-dim transition-all duration-300">
               EXPLORE EVENTS
             </Link>
@@ -354,9 +354,9 @@ const Home = () => {
         <p className="font-body text-void/80 text-xl md:text-2xl mb-12 max-w-2xl">
           We don't just play. We dominate. Join the ranks.
         </p>
-        <Link to="/members" className="bg-void text-acid font-subheading font-bold uppercase tracking-widest px-12 py-4 hover:scale-105 transition-transform duration-300">
+        <a href="https://www.instagram.com/clutchrit.esports?igsh=MXgzdWNoc3g2MXU5Yw==" target="_blank" rel="noopener noreferrer" className="bg-void text-acid font-subheading font-bold uppercase tracking-widest px-12 py-4 hover:scale-105 transition-transform duration-300">
           APPLY NOW →
-        </Link>
+        </a>
       </section>
     </div>
   );
