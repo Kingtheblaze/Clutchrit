@@ -36,12 +36,14 @@ app.get('/', (req, res) => {
 // Import Routes
 const authRoutes = require('./routes/authRoutes');
 const eventRoutes = require('./routes/eventRoutes');
+const inviteRoutes = require('./routes/inviteRoutes');
 const announcementRoutes = require('./routes/announcementRoutes');
 const memberRoutes = require('./routes/memberRoutes');
 
 // Use Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/events', eventRoutes);
+app.use('/api/invites', inviteRoutes);
 app.use('/api/announcements', announcementRoutes);
 app.use('/api/members', memberRoutes);
 

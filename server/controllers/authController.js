@@ -7,7 +7,11 @@ const supabase = require('../config/db');
 // @route   POST /api/auth/register
 // @access  Public
 const register = async (req, res) => {
-  const { username, password, role } = req.body;
+  const { username, password, role, inviteCode } = req.body;
+
+  if (!inviteCode) {
+    return res.status(400).json({ message: 'Invite code is required' });
+  }
 
   try {
     // Check if username already exists
@@ -19,6 +23,23 @@ const register = async (req, res) => {
 
     if (existingUser) {
       return res.status(400).json({ message: 'Username already taken' });
+    }
+
+    // 1. Verify invite code
+    const { data: invite, error: inviteError } = await supabase
+      .from('invites')
+      .select('*')
+      .eq('code', inviteCode)
+      .eq('is_used', false)
+      .single();
+
+    if (inviteError || !invite) {
+      return res.status(400).json({ message: 'Invalid or used invite code' });
+    }
+
+    // Check expiration
+    if (new Date(invite.expires_at) < new Date()) {
+      return res.status(400).json({ message: 'Invite code has expired' });
     }
 
     // Hash password
@@ -39,6 +60,12 @@ const register = async (req, res) => {
       .single();
 
     if (error) throw error;
+
+    // 4. Mark invite as used
+    await supabase
+      .from('invites')
+      .update({ is_used: true })
+      .eq('id', invite.id);
 
     // Generate tokens
     const accessToken = jwt.sign(

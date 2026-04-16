@@ -1,6 +1,6 @@
 // src/pages/Login.jsx
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { motion } from 'framer-motion';
 
@@ -111,7 +111,10 @@ const Login = () => {
             </button>
           </motion.form>
           
-          <div className="mt-16 pt-8 border-t border-border border-dashed text-text-2 font-mono text-[10px] uppercase relative">
+          <div className="mt-16 pt-8 border-t border-border border-dashed text-text-2 font-mono text-[10px] uppercase relative flex flex-col gap-4">
+            <Link to="/register" className="text-acid hover:text-text-0 transition-colors">
+              [ RECRUIT NEW ADMIN ]
+            </Link>
             <p className="opacity-50">UNAUTHORIZED ACCESS IS PROHIBITED. ALL ATTEMPTS ARE LOGGED.</p>
           </div>
         </div>

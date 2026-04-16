@@ -23,6 +23,7 @@ import AdminDashboard from './pages/admin/Dashboard';
 import ManageEvents from './pages/admin/ManageEvents';
 import ManageAnnouncements from './pages/admin/ManageAnnouncements';
 import ManageMembers from './pages/admin/ManageMembers';
+import InviteUser from './pages/admin/InviteUser';
 
 const App = () => {
   return (
@@ -64,6 +65,7 @@ const App = () => {
                 <Route path="/admin/events" element={<ManageEvents />} />
                 <Route path="/admin/announcements" element={<ManageAnnouncements />} />
                 <Route path="/admin/members" element={<ManageMembers />} />
+                <Route path="/admin/invite" element={<InviteUser />} />
               </Route>
             </Routes>
           </main>

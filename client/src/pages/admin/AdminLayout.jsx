@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Outlet, NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
-import { LayoutDashboard, Users, Calendar, Megaphone, LogOut, Menu, X } from 'lucide-react';
+import { LayoutDashboard, Users, Calendar, Megaphone, LogOut, Menu, X, UserPlus } from 'lucide-react';
 
 const AdminLayout = () => {
   const { user, logout } = useAuth();
@@ -19,6 +19,7 @@ const AdminLayout = () => {
     { name: 'Members', path: '/admin/members', end: false, icon: Users },
     { name: 'Events', path: '/admin/events', end: false, icon: Calendar },
     { name: 'Announcements', path: '/admin/announcements', end: false, icon: Megaphone },
+    { name: 'Recruitment', path: '/admin/invite', end: false, icon: UserPlus },
   ];
 
   return (

@@ -83,9 +83,9 @@ export const AuthProvider = ({ children }) => {
     }
   }
 
-  const register = async (username, password, role = 'admin') => {
+  const register = async (username, password, role = 'admin', inviteCode) => {
     try {
-      const { data } = await api.post('/auth/register', { username, password, role });
+      const { data } = await api.post('/auth/register', { username, password, role, inviteCode });
       dispatch({ type: 'LOGIN_SUCCESS', payload: data });
       return { success: true };
     } catch (err) {
