@@ -52,7 +52,7 @@ const EventDetail = () => {
             className="relative rounded-lg overflow-hidden border border-cyan-glow/30"
           >
             <img 
-              src={event.bannerImage || "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=1200"} 
+              src={event.banner_image || "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=1200"} 
               alt={event.title}
               className="w-full aspect-video object-cover"
             />

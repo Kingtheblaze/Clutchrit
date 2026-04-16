@@ -171,6 +171,7 @@
   .member-card img {
     @apply w-full h-full object-cover grayscale;
     transition: all 0.5s ease;
+    animation: photoReveal 1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
   }
 
   .member-card .acid-overlay {
@@ -277,6 +278,29 @@
   60% { transform: skew(-5deg); }
   80% { transform: skew(5deg); }
   100% { transform: skew(0deg); }
+}
+
+@keyframes photoReveal {
+  0% {
+    opacity: 0;
+    filter: grayscale(100%) brightness(200%) contrast(200%);
+    transform: scale(1.1) translateY(10px);
+    clip-path: inset(0 100% 0 0);
+  }
+  50% {
+    opacity: 0.5;
+    clip-path: inset(0 0 0 0);
+  }
+  70% {
+    filter: grayscale(100%) brightness(120%) contrast(120%);
+    transform: scale(1.02) translateY(0);
+  }
+  100% {
+    opacity: 1;
+    filter: grayscale(100%) brightness(100%) contrast(100%);
+    transform: scale(1) translateY(0);
+    clip-path: inset(0 0 0 0);
+  }
 }
 
 @keyframes marquee {

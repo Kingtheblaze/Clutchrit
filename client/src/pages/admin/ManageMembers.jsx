@@ -86,7 +86,7 @@ const ManageMembers = () => {
         order: member.order || 99
       });
       setSelectedGames(member.games || []);
-      setPhotoPreview(member.photoUrl || null);
+      setPhotoPreview(member.photo || null);
     } else {
       resetForm();
     }
@@ -268,10 +268,9 @@ const ManageMembers = () => {
             {filteredMembers.map(member => (
               <div key={member.id} className="flex flex-col md:flex-row md:items-center gap-4 p-4 border-b border-border hover:bg-surface-2 transition-colors">
                 
-                {/* Photo */}
                 <div className="w-14 h-14 shrink-0 bg-surface-2 border border-border overflow-hidden opacity-80 hover:opacity-100 transition-opacity">
-                  {member.photoUrl ? (
-                    <img src={member.photoUrl} alt={member.name} className="w-full h-full object-cover grayscale brightness-75 hover:grayscale-0 hover:brightness-100 transition-all" />
+                  {member.photo ? (
+                    <img src={member.photo} alt={member.name} className="w-full h-full object-cover grayscale brightness-75 hover:grayscale-0 hover:brightness-100 transition-all" />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center font-heading text-acid text-xl">
                       {member.name.substring(0, 2).toUpperCase()}

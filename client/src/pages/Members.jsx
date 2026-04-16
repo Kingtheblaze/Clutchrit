@@ -130,8 +130,8 @@ const Members = () => {
                   <div className="absolute top-0 right-0 z-10 bg-acid text-void font-mono text-xs px-2 py-1 font-bold">
                     #{String(index + 1).padStart(2, '0')}
                   </div>
-                  {member.photoUrl ? (
-                    <img src={member.photoUrl} alt={member.name} />
+                  {member.photo ? (
+                    <img src={member.photo} alt={member.name} />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center bg-surface-2 text-4xl text-text-2 group-hover:grayscale-0 grayscale transition-all duration-500">
                       👤
@@ -237,8 +237,8 @@ const Members = () => {
                 `}</style>
                 
                 <div className="member-photo-container">
-                  {member.photoUrl ? (
-                    <img src={member.photoUrl} alt={member.name} className="grayscale group-hover:grayscale-0 transition-all duration-500 w-full h-full object-cover" />
+                  {member.photo ? (
+                    <img src={member.photo} alt={member.name} className="grayscale group-hover:grayscale-0 transition-all duration-500 w-full h-full object-cover" />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center bg-surface-2 text-4xl text-text-2 group-hover:text-text-1 group-hover:grayscale-0 grayscale transition-all duration-500">
                       👤

@@ -108,7 +108,7 @@ const updateEvent = async (req, res) => {
       return res.status(404).json({ message: 'Event not found' });
     }
 
-    let bannerImage = existingEvent.bannerImage;
+    let bannerImage = existingEvent.banner_image;
 
     if (req.file) {
       // Upload new image

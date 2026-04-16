@@ -217,8 +217,8 @@ const Home = () => {
             {events[0] && (
               <div className="lg:w-[55%] event-card group">
                 <div className="relative h-56 w-full overflow-hidden bg-surface-2 border-b border-border">
-                  {events[0].bannerImage ? (
-                    <img src={events[0].bannerImage} alt={events[0].title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  {events[0].banner_image ? (
+                    <img src={events[0].banner_image} alt={events[0].title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center text-6xl text-text-2">🎮</div>
                   )}
@@ -256,8 +256,8 @@ const Home = () => {
                   <div className="flex flex-col sm:flex-row w-full h-full">
                     {/* Small image block */}
                     <div className="sm:w-[30%] h-48 sm:h-auto relative bg-surface-2 overflow-hidden border-b sm:border-b-0 sm:border-r border-border">
-                      {event.bannerImage ? (
-                        <img src={event.bannerImage} alt={event.title} className="w-full h-full object-cover" />
+                      {event.banner_image ? (
+                        <img src={event.banner_image} alt={event.title} className="w-full h-full object-cover" />
                       ) : (
                         <div className="w-full h-full flex items-center justify-center text-4xl text-text-2">🎮</div>
                       )}

@@ -78,7 +78,7 @@ const ManageEvents = () => {
         status: event.status || 'UPCOMING',
         tags: (event.tags || []).join(', ')
       });
-      setBannerPreview(event.bannerImage || null);
+      setBannerPreview(event.banner_image || null);
     } else {
       resetForm();
     }
@@ -203,8 +203,8 @@ const ManageEvents = () => {
               <div key={event.id} className="flex flex-col md:flex-row md:items-center gap-4 p-4 border-b border-border hover:bg-surface-2 transition-colors">
                 
                 <div className="w-20 h-12 shrink-0 bg-surface-2 border border-border overflow-hidden">
-                  {event.bannerImage ? (
-                    <img src={event.bannerImage} alt="Banner" className="w-full h-full object-cover" />
+                  {event.banner_image ? (
+                    <img src={event.banner_image} alt="Banner" className="w-full h-full object-cover" />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center font-subheading text-text-2 text-xs">NO IMG</div>
                   )}
