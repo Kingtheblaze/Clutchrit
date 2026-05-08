@@ -1,0 +1,35 @@
+name: Local Backend CI/CD Pipeline
+
+# Trigger this pipeline automatically when code is pushed to the 'main' branch
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-to-local-ubuntu:
+    name: Build & Deploy Backend
+    # 'self-hosted' is the magic word that sends the job to your local D:/ drive runner
+    runs-on: self-hosted 
+
+    steps:
+      - name: 1. Checkout Code
+        uses: actions/checkout@v4
+
+      - name: 2. Stop and Remove Old Server
+        run: |
+          docker stop clutchrit-backend || true
+          docker rm clutchrit-backend || true
+
+      - name: 3. Build New Docker Image
+        run: |
+          docker build -t clutchrit-api-image:latest .
+
+      - name: 4. Start New Server
+        # Adjust '3000:3000' if your server.js uses a different port (like 5000 or 8080)
+        run: |
+          docker run -d -p 3000:3000 --name clutchrit-backend clutchrit-api-image:latest
+          
+      - name: 5. Clean Up Old Data
+        run: |
+          docker system prune -f
