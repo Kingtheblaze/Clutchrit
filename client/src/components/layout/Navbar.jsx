@@ -128,7 +128,7 @@ const Navbar = () => {
               </button>
             </div>
           ) : (
-            <Link to="/login" className="font-subheading text-[10px] text-text-2 hover:text-acid uppercase tracking-widest transition-colors border border-border px-3 py-1">
+            <Link to={location.pathname === '/login' ? '/' : '/login'} className="font-subheading text-[10px] text-text-2 hover:text-acid uppercase tracking-widest transition-colors border border-border px-3 py-1">
               TERMINAL_LOG
             </Link>
           )}
@@ -193,7 +193,7 @@ const Navbar = () => {
                     </button>
                   </>
                 ) : (
-                  <Link to="/login" className="font-subheading text-xs text-text-2 uppercase tracking-widest border border-border p-4 text-center">
+                  <Link to={location.pathname === '/login' ? '/' : '/login'} className="font-subheading text-xs text-text-2 uppercase tracking-widest border border-border p-4 text-center">
                     ADMIN GATEWAY
                   </Link>
                 )}
