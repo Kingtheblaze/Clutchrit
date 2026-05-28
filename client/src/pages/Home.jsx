@@ -22,8 +22,10 @@ const Home = () => {
           api.get('/events?status=upcoming'),
           api.get('/announcements')
         ]);
-        setEvents(eventsRes.data.slice(0, 3));
-        setAnnouncements(annRes.data.slice(0, 2));
+        const eventsData = Array.isArray(eventsRes.data) ? eventsRes.data : [];
+        const annData = Array.isArray(annRes.data) ? annRes.data : [];
+        setEvents(eventsData.slice(0, 3));
+        setAnnouncements(annData.slice(0, 2));
       } catch (err) {
         console.error('Home data fetch error:', err);
       } finally {
