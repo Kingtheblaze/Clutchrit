@@ -7,6 +7,7 @@ import Cursor from './components/ui/Cursor';
 import Ticker from './components/ui/Ticker';
 import Footer from './components/layout/Footer';
 import ProtectedRoute from './routes/ProtectedRoute';
+import CommandLauncher from './components/ui/CommandLauncher';
 
 // Pages (To be implemented)
 import Home from './pages/Home';
@@ -31,6 +32,7 @@ const App = () => {
       <Cursor />
       <Ticker />
       <Router>
+        <CommandLauncher />
         <div className="flex flex-col min-h-screen bg-void text-text-0 pt-8">
           {/* Cyberpunk Scanline Overlay */}
           <div className="noise-overlay" />

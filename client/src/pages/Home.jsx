@@ -8,6 +8,7 @@ import GlowCard from '../components/ui/GlowCard';
 import NeonBadge from '../components/ui/NeonBadge';
 import SectionHeader from '../components/ui/SectionHeader';
 import CounterStat from '../components/ui/CounterStat';
+import AntiGravityCard from '../components/ui/AntiGravityCard';
 
 const Home = () => {
   const [events, setEvents] = useState([]);
@@ -107,21 +108,45 @@ const Home = () => {
             <line x1="0" y1="0" x2="500" y2="800" stroke="rgba(255,255,255,0.05)" strokeWidth="1" />
           </svg>
 
-          {/* Floating Stat Chips */}
-          <div className="absolute top-[20%] left-[10%] bg-surface-2 border border-border-bright p-4 transform rotate-[-2deg] bracketed-card">
-            <p className="font-subheading text-text-1 text-xs uppercase tracking-widest mb-1">ACTIVE PLAYERS</p>
-            <p className="font-mono text-acid text-2xl">—</p>
-          </div>
+          {/* Floating Stat Chips — wrapped in AntiGravityCard for independent drift */}
+          <AntiGravityCard
+            floatVariant="a"
+            glowColor="cyan"
+            delay={0.2}
+            disableTilt
+            className="absolute top-[20%] left-[10%]"
+          >
+            <div className="bg-surface-2 border border-border-bright p-4 transform rotate-[-2deg] bracketed-card">
+              <p className="font-subheading text-text-1 text-xs uppercase tracking-widest mb-1">ACTIVE PLAYERS</p>
+              <p className="font-mono text-acid text-2xl">—</p>
+            </div>
+          </AntiGravityCard>
 
-          <div className="absolute top-[50%] right-[15%] bg-surface-2 border border-border-bright p-4 transform rotate-[3deg] bracketed-card">
-            <p className="font-subheading text-text-1 text-xs uppercase tracking-widest mb-1">EVENTS HOSTED</p>
-            <p className="font-mono text-acid text-2xl">—</p>
-          </div>
+          <AntiGravityCard
+            floatVariant="b"
+            glowColor="magenta"
+            delay={0.8}
+            disableTilt
+            className="absolute top-[50%] right-[15%]"
+          >
+            <div className="bg-surface-2 border border-border-bright p-4 transform rotate-[3deg] bracketed-card">
+              <p className="font-subheading text-text-1 text-xs uppercase tracking-widest mb-1">EVENTS HOSTED</p>
+              <p className="font-mono text-acid text-2xl">—</p>
+            </div>
+          </AntiGravityCard>
 
-          <div className="absolute bottom-[20%] left-[20%] bg-surface-2 border border-border-bright p-4 transform rotate-[-1deg] bracketed-card">
-            <p className="font-subheading text-text-1 text-xs uppercase tracking-widest mb-1">GAMES</p>
-            <p className="font-mono text-acid text-2xl">6+</p>
-          </div>
+          <AntiGravityCard
+            floatVariant="c"
+            glowColor="acid"
+            delay={1.4}
+            disableTilt
+            className="absolute bottom-[20%] left-[20%]"
+          >
+            <div className="bg-surface-2 border border-border-bright p-4 transform rotate-[-1deg] bracketed-card">
+              <p className="font-subheading text-text-1 text-xs uppercase tracking-widest mb-1">GAMES</p>
+              <p className="font-mono text-acid text-2xl">6+</p>
+            </div>
+          </AntiGravityCard>
         </div>
       </section>
 

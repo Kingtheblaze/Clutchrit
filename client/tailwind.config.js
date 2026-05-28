@@ -8,6 +8,7 @@ export default {
     extend: {
       colors: {
         void: "var(--void)",
+        'void-black': "var(--void-black)",
         surface: {
           0: "var(--surface-0)",
           1: "var(--surface-1)",
@@ -26,6 +27,8 @@ export default {
           DEFAULT: "var(--ice)",
           dim: "var(--ice-dim)",
         },
+        'neon-cyan': "var(--neon-cyan)",
+        'neon-magenta': "var(--neon-magenta)",
         text: {
           0: "var(--text-0)",
           1: "var(--text-1)",
@@ -45,6 +48,9 @@ export default {
       boxShadow: {
         'acid-glow': 'var(--acid-glow)',
         'fire-glow': 'var(--fire-glow)',
+        'antigravity-cyan': '0 20px 40px -15px rgba(0, 240, 255, 0.3), 0 0 20px rgba(0, 240, 255, 0.1)',
+        'antigravity-magenta': '0 20px 40px -15px rgba(255, 0, 127, 0.3), 0 0 20px rgba(255, 0, 127, 0.1)',
+        'ag-modal': '0 0 60px rgba(0, 240, 255, 0.15), 0 0 120px rgba(255, 0, 127, 0.08)',
       },
       cursor: {
         none: 'none',
